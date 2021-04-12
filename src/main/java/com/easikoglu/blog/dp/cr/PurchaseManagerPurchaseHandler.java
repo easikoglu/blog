@@ -9,7 +9,7 @@ public class PurchaseManagerPurchaseHandler extends PurchaseHandler {
     if (request.getAmount().compareTo(BigDecimal.valueOf(1500)) < 0) {
       System.out.println("Purchase Manager approved request");
     } else {
-      successor.handlePurchase(request); // calling next handler.
+      nextHandler.handlePurchase(request); // calling next handler.
     }
   }
 }

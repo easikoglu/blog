@@ -9,7 +9,7 @@ public class LineManagerPurchaseHandler extends PurchaseHandler {
     if (request.getAmount().compareTo(BigDecimal.valueOf(1000)) < 0) {
       System.out.println("Line Manager approved the purchase request");
     } else {
-      successor.handlePurchase(request); // calling next handler.
+      nextHandler.handlePurchase(request); // calling next handler.
     }
   }
 }

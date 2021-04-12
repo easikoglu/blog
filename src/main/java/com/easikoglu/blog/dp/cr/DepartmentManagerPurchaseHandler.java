@@ -10,7 +10,7 @@ public class DepartmentManagerPurchaseHandler extends PurchaseHandler {
         && !PurchaseRequest.PurchaseType.FURNITURE.equals(request.getType())) {
       System.out.println("Department Manager approved the purchase request");
     } else {
-      successor.handlePurchase(request); // calling next handler.
+      nextHandler.handlePurchase(request); // calling next handler.
     }
   }
 }

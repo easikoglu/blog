@@ -11,10 +11,10 @@ public class Demo {
     DepartmentManagerPurchaseHandler departmentManager = new DepartmentManagerPurchaseHandler();
     LineManagerPurchaseHandler lineManager = new LineManagerPurchaseHandler();
 
-    // setting up successors due to handle all requests.
-    lineManager.setSuccessor(departmentManager);
-    departmentManager.setSuccessor(purchaseManager);
-    purchaseManager.setSuccessor(generalManager);
+    // setting up next handler from chain as successors due to handle all requests.
+    lineManager.setNextHandler(departmentManager);
+    departmentManager.setNextHandler(purchaseManager);
+    purchaseManager.setNextHandler(generalManager);
 
     PurchaseRequest simpleReq = new PurchaseRequest();
     simpleReq.setType(PurchaseRequest.PurchaseType.ELECTRONIC);

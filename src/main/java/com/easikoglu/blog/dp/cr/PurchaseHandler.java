@@ -2,11 +2,11 @@ package com.easikoglu.blog.dp.cr;
 
 public abstract class PurchaseHandler {
 
-    protected PurchaseHandler successor;
+    protected PurchaseHandler nextHandler;
 
-    public void setSuccessor(PurchaseHandler successor) {
-        this.successor = successor;
+    public void setNextHandler(PurchaseHandler nextHandler) {
+        this.nextHandler = nextHandler;
     }
 
-    public abstract void handlePurchase(PurchaseRequest request);
+    protected abstract void handlePurchase(PurchaseRequest request);
 }
